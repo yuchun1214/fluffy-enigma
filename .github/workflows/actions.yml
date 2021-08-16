@@ -5,5 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: make main
-      - run: ./main
+      - run: cmake -S . -B build
+      - run: cmake --build build
+      - run: cd build && ./hello_test
+      
