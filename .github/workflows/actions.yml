@@ -5,7 +5,8 @@ jobs:
     name: test on ubuntu
     runs-on: ${{ matrix.os }}
     strategy:
-        os: ["macOS-latest", "ubuntu-latest"]
+        matrix:
+            os: ["macOS-latest", "ubuntu-latest"]
     steps:
       - uses: actions/checkout@v2
       - run: cmake -S . -B build
